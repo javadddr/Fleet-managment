@@ -10,12 +10,24 @@
   top: 0;
   left: 0;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-  z-index: 999;
-  
-  -webkit-backdrop-filter: blur(10px); /* for Safari */
-  backdrop-filter: blur(10px);
+
+ 
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .navbar__logo {
   font-size: 28px;
@@ -119,9 +131,125 @@
 }
 
 
+
+.happy-count1,
+.unhappy-count1,
+.unhappy-2-count1,
+.unhappy-3-count1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(240, 240, 166);
+}
+
+
+.happy-count1 h2,
+.unhappy-count1 h2,
+.unhappy-2-count1 h2,
+.unhappy-3-count1 h2{
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+}
+
+
+.happy-count3,
+.unhappy-count3{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(166, 225, 240);
+}
+
+
+.happy-count3 h2,
+.unhappy-count3 h2{
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+}
+
+
+.unhappy-count4{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(236, 248, 12);
+  margin-top: 24px;
+
+}
+.unhappy-count4 h2{
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+}
+
+
+
 .state-chart-container{
   margin-right: 150px;
   border: 1px solid black;
   border-radius: 10px;
+}
+
+.logosb{
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 150px;
+
+}
+.Beevans1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.state-count{
+  margin-left: 10px;
+}
+.braket2{
+  margin-left: 5px;
+  height: 115px;
+     display: inline-block;
+     padding: 2px 2px;
+     font-size: 36px;
+     font-family: Arial, sans-serif;
+     font-weight: bold;
+     color: #fff;
+     background-color: #428bca;
+     border-radius: 4px;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  
+}
+.braket1{
+  margin-left: 5px;
+  height: 115px;
+     display: inline-block;
+     padding: 2px 2px;
+     font-size: 36px;
+     font-family: Arial, sans-serif;
+     font-weight: bold;
+     color: #fff;
+     background-color: #428bca;
+     border-radius: 4px;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.titleo1{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 23px;
 }
 

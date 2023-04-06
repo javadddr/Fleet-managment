@@ -1,63 +1,62 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
-const DriverProfile = ({ driver, setData }) => {
+const Profile = ({ data, setData }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [availability, setAvailability] = useState({
-    from: null,
-    till: null,
-    reason: "",
-  });
-
-  const handleCheckboxChange = (field) => {
-    setData((prevState) =>
-      prevState.map((prevDriver) =>
-        prevDriver.id === driver.id
-          ? { ...prevDriver, [field]: !driver[field] }
-          : prevDriver
-      )
-    );
-  };
-
-  const handleAddAvailability = () => {
-    setData((prevState) =>
-      prevState.map((prevDriver) =>
-        prevDriver.id === driver.id
-          ? {
-              ...prevDriver,
-              available: [...prevDriver.available, { ...availability }],
-            }
-          : prevDriver
-      )
-    );
-    setAvailability({ from: null, till: null, reason: "" });
-  };
-
-  const handleReasonChange = (event) => {
-    setAvailability((prevState) => ({
-      ...prevState,
-      reason: event.target.value,
-    }));
-  };
-
-  const handleFromChange = (date) => {
-    setAvailability((prevState) => ({
-      ...prevState,
-      from: date,
-    }));
-  };
-
-  const handleTillChange = (date) => {
-    setAvailability((prevState) => ({
-      ...prevState,
-      till: date,
-    }));
-  };
+  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedFromDate, setSelectedFromDate] = useState("");
+  const [selectedToDate, setSelectedToDate] = useState("");
 
   const toggleEditing = () => {
     setIsEditing(!isEditing);
   };
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setData((prevData) =>
+      prevData.map((d) => {
+        if (d.id === data.id) {
+          return { ...d, [name]: checked };
+        }
+        return d;
+      })
+    );
+  };
+
+  const handleDateChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "fromDate") {
+      setSelectedFromDate(value);
+    } else {
+      setSelectedToDate(value);
+    }
+  };
+
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+  };
+
+  const handleAddAvailability = () => {
+    const newAvailability = {
+      from: selectedFromDate,
+      till: selectedToDate,
+      why: selectedOption,
+    };
+    setData((prevData) =>
+      prevData.map((d) => {
+        if (d.id === data.id) {
+          return { ...d, available: [...d.available, newAvailability] };
+        }
+        return d;
+      })
+    );
+    setSelectedOption("");
+    setSelectedFromDate("");
+    setSelectedToDate("");
+    setIsEditing(false);
+  };
+
+  const { name, profilPic, isHappy, isUnhappy, isUnhappy2, isUnhappy3 } = data;
+
   return (
     <div>
       <img src={profilPic} alt={name} />

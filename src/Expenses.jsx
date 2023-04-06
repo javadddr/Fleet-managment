@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function ExpensesPopup(props) {
   const [expenses, setExpenses] = useState(props.expenses);
-
+ props.setExpenses
   const handleAddExpense = () => {
     setExpenses([...expenses, { id: expenses.length + 1, what: "", when: "", cost: "" }]);
   };
@@ -13,9 +13,15 @@ function ExpensesPopup(props) {
         return { ...expense, [field]: event.target.value };
       }
       return expense;
+      
+     
     });
     setExpenses(updatedExpenses);
+    
+    
   };
+
+  
 
   const handleExpenseDelete = (expenseId) => {
     const updatedExpenses = expenses.filter((expense) => expense.id !== expenseId);
@@ -41,7 +47,7 @@ function ExpensesPopup(props) {
                   <th>What</th>
                   <th>When</th>
                   <th>Cost</th>
-                  <th></th>
+                  <th>Delete</th>
                 </tr>
               </thead>
              
