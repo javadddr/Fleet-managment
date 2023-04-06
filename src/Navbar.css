@@ -1,0 +1,127 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #faeeee;
+  padding: 5px 80px;
+  padding-right: 100px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  backdrop-filter: blur(10px);
+  
+}
+
+.navbar__logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar__chart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  margin-left: 40px;
+}
+
+.navbar__chart-item {
+  flex: 1;
+  margin: 0 10px;
+  height: 60px;
+  position: relative;
+}
+
+.navbar__chart-label {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.navbar__chart-bar {
+  height: 40px;
+  border-radius: 10px;
+  background-color: #2e7d32;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar__chart-bar:after {
+  content: attr(data-value) '%';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.navbar__chart-bar--happy {
+  background-color: #43a047;
+}
+
+.navbar__chart-bar--unhappy {
+  background-color: #c62828;
+}
+
+.navbar__chart-bar--unhappy2 {
+  background-color: #f9a825;
+}
+
+.navbar__chart-bar--unhappy3 {
+  background-color: #00838f;
+}
+
+.happy-count,
+.unhappy-count,
+.unhappy-2-count,
+.unhappy-3-count{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+
+.happy-count h2,
+.unhappy-count h2,
+.unhappy-2-count h2,
+.unhappy-3-count h2{
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.happy-count{
+  background-color: rgb(17, 201, 11);
+
+}
+.unhappy-count,
+.unhappy-2-count{
+  background-color: rgb(235, 79, 79);
+
+}
+
+.unhappy-3-count{
+  background-color: rgb(204, 197, 9);
+
+}
+
+
+.state-chart-container{
+  margin-right: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
